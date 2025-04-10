@@ -192,14 +192,14 @@ def MoveBone(target, bone, context, location):
     #print(translation_loc)
 
     # Calculate the movement difference
-    location_diff = copy_location - cursor.location
+    location_diff = copy_location - cursor_loc
 
     bpy.ops.transform.translate(
         value=location_diff,
         constraint_axis= (False, False, False),
         orient_type = 'GLOBAL',
         mirror= False,
-        use_proportional_edit= 'DISABLED',
+        use_proportional_edit= False,
         snap= False,
         snap_target= 'CLOSEST',
         snap_point= (0.0, 0.0, 0.0),
